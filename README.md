@@ -1,8 +1,5 @@
 ## FlipFlap HW
 
-(this assignment is in beta mode!  let us know asap if you find mistakes or
-  have questions in this description.)
-
 ###Overview
 
 This homework assignment asks you to create two files (a module and a class) that
@@ -10,7 +7,9 @@ are needed to run the two command lines applications you are given.
 
 ###Installing Basic HW files
 
-To install the files needed to start this homework project, you must do:
+First, make sure you have `git` installed (see our class notes) on your machine.
+
+Then, install the files needed to start this homework project:
 
     $ git clone https://github.com/ISS-SOA/FlipFlap_HW.git
 
@@ -19,7 +18,7 @@ This will create a directory called `FlipFlap_HW` in your current directory.
 ###Files Given
 
 You are given two complete code files: `tsv_to_yml.rb` and `yml_to_tsv.rb`.
-These files are command line applications that convert TSV and Yaml files.
+These files are command line applications that convert between TSV and Yaml formats.
 However, they require two more more code files that you must create in this assignment:
 `flip_flap.rb` and `tsv_buddy.rb`.
 
