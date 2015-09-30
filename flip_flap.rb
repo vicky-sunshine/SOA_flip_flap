@@ -1,7 +1,6 @@
 require_relative 'tsv_buddy'
 
 class FlipFlap
-
-  # Do not create any initializers
+  # Do NOT create an initialize method
 
 end
