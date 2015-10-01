@@ -98,22 +98,13 @@ And that's it!
 If your solution works, then you should be able to convert TSV files into Yaml,
 and back into TSV with no change in information.
 
-For example, here is some command line code to make sure your solution works:
+Test your code out by running the spec (test) that is provided:
 
 ```
-$ ruby tsv_to_yml.rb data/survey.tsv data/test.yml
-$ diff data/survey.yml data/test.yml
+$ ruby flip_flap_spec.rb
 ```
 
-The `diff`command checks if two files are the same or not. If your code is working,
-the `diff` command should not return any information!
-
-Similarly:
-
-```
-$ ruby yml_to_tsv.rb data/survey.yml data/test.tsv
-$ diff data/survey.tsv data/test.tsv
-```
+Also, take a peek into `flip_flap_spec.rb` to see how it works -- you will soon start writing your own specs!
 
 ### What Did We Learn?
 
