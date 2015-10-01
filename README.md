@@ -15,7 +15,17 @@ Then, install the files needed to start this homework project:
 
 This will create a directory called `FlipFlap_HW` in your current directory.
 
-###Files Given
+*DO NOT FORK THIS REPO* because you will not submit your solution as pull requests! You may, however, fork the repo if you wish to submit pull requests that fix typos, etc.
+
+Second, link the repo in your new folder with Github:
+- create a new repo in your Github account (call it `SOA_flip_flap` for example), and copy the SSH URL
+- `cd` into your local directory `FlipFlap_HW`
+- set your new Github repo as the remote `origin` repo: `$ git remote add origin git@github.com/YOURACCOUNT/YOURREPO.git`
+
+When working on your solution, keep adding changes, commiting, and pushing to Github.
+
+
+### Files Given
 
 You are given two complete code files: `tsv_to_yml.rb` and `yml_to_tsv.rb`.
 These files are command line applications that convert between TSV and Yaml formats.
@@ -105,6 +115,10 @@ $ ruby flip_flap_spec.rb
 ```
 
 Also, take a peek into `flip_flap_spec.rb` to see how it works -- you will soon start writing your own specs!
+
+### Submission
+
+Please submit the URL of your Github repo.
 
 ### What Did We Learn?
 
