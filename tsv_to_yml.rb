@@ -12,6 +12,4 @@ tsv = File.read(tsv_filename)
 flipper = FlipFlap.new
 flipper.take_tsv(tsv)
 
-File.open(yml_filename, 'w') do |file|
-  file.puts flipper.to_yaml
-end
+File.write(yml_filename, flipper.to_yaml)

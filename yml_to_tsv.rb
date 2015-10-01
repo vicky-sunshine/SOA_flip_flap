@@ -8,9 +8,8 @@ fail ArgumentError, usage if ARGV.count < 2
 yml_filename = ARGV[0]
 tsv_filename = ARGV[1]
 
+yml = File.read(yml_filename)
 flipper = FlipFlap.new
-flipper.take_yaml(File.read(yml_filename))
+flipper.take_yaml(yml)
 
-tsv = flipper.to_tsv
-
-File.write(tsv_filename, tsv)
+File.write(tsv_filename, flipper.to_tsv)
