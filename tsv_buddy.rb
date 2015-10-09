@@ -7,40 +7,29 @@ module TsvBuddy
   # take_tsv: converts a String with TSV data into @data
   # parameter: tsv - a String in TSV format
   def take_tsv(tsv)
-    lines = []
-    tsv.each_line { |line| lines << line }
-    # get keys
-    keys = lines[0].chop.split("\t")
-    # shift out the keys
-    lines.shift
-    # get values and put into yml stucture
-    format_data = []
-    lines.each do |line|
-      element = {}
-      values = line.chop.split("\t")
-      keys.each_index { |index| element[keys[index]] = values[index] }
-      format_data.push(element)
+    @data ||= []
+    keys = []
+    tsv.each_line.with_index do |line, index|
+      if index == 0
+        # get keys
+        keys = line.chop.split("\t")
+      else
+        # get values and put into yml stucture
+        @data << Hash[keys.zip line.chop.split("\t")]
+      end
     end
-    @data = format_data
   end
 
   # to_tsv: converts @data into tsv string
   # returns: String in TSV format
   def to_tsv
-    format_string = ''
-    keys = @data[0].keys
-    format_string << keys[0]
-    keys.shift
-    keys.each { |key| format_string << "\t" + key }
-    format_string << "\n"
-    # print value
+    # a: accumlator, e: next element, tail has no "\t
+    # assign keys as headers first
+    format_string = @data[0].keys.reduce { |a, e| "#{a}\t#{e}" }
     @data.each do |element|
       # avoid "\t" at the tail of line
-      format_string << element.values[0]
-      element.shift
-      element.each_value { |value| format_string << "\t" + value }
-      format_string << "\n"
+      format_string << "\n#{element.values.reduce { |a, e| "#{a}\t#{e}" }}"
     end
-    format_string
+    format_string << "\n"
   end
 end
